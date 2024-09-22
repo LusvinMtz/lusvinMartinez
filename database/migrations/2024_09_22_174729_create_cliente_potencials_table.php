@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cliente_potencials', function (Blueprint $table) {
+        Schema::create('clientes_potenciales', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('email');
+            $table->boolean('cerrado')->default(false); // Define si el negocio está cerrado o no
             $table->timestamps();
         });
+
     }
 
     /**
